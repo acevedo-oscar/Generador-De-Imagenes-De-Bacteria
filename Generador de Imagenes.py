@@ -33,6 +33,8 @@ r_matrix = np.random.uniform(0,1, nodes_number)
 
 
 
+#Step 3
+
 posibles = [1,2,3,4,5,6]
 my_sets = findsubsets(posibles,3)
 
