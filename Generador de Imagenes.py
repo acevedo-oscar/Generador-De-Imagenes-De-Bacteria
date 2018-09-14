@@ -84,15 +84,26 @@ def SystemDynamics(  time , input_values ):
 initial_cond = Get_Random_Composition(nodes_number )
 
 T : int = 600
-solution1 = solve_ivp(SystemDynamics, (0,T), initial_cond  )
+solution1 = solve_ivp(SystemDynamics, (0,T), initial_cond, rtol = 1e-6, method='RK45'    )
 
 print(solution1.message)
 
 initial_cond2 = Get_Random_Composition(nodes_number )
 
-solution2 = solve_ivp(SystemDynamics, (0,T), initial_cond2  )
+solution2 = solve_ivp(SystemDynamics, (0,T), initial_cond2, method='RK45'    )
 print(solution2.message)
 
+
+initial_cond3 = Get_Random_Composition(nodes_number )
+
+solution3 = solve_ivp(SystemDynamics, (0,T), initial_cond3, method='RK45'    )
+print(solution3.message)
+
+print(solution1.status)
+print(solution2.status)
+print(solution3.status)
+
+print("\n")
 
 print(initial_cond)
 print(initial_cond2)
