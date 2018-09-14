@@ -65,8 +65,7 @@ r_matrix : Tensor = np.random.uniform(0,1, nodes_number)
 
 #Step 3
 
-time_interval = np.linspace(0,600,1000)
-
+ 
 def SystemDynamics(  time , input_values ):
     """
     dx/dt = diag(x)[Ax+r]
