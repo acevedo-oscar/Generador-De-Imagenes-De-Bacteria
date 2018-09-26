@@ -8,7 +8,7 @@ from scipy.integrate import solve_ivp
 mu : float = 0.0
 interspec : float= 0.6
 nodes_number : int= 28
-interaction_probability :float = 0.1
+interaction_probability :float = 1
 #np.random.seed(12)
 
 A_matrix : Tensor = ER_Eco_Net_Matrix(nodes_number, interaction_probability, interspec )
@@ -47,9 +47,9 @@ def GetImageMatrix(species_number:int,T:int) -> Tensor:
     return np.array(states_container)
 
 
-number_of_images : int = 1000
+number_of_images : int = 100
 
-T   = 1
+T   = 75
 images_dataset = [ ]
 
 for k in range(number_of_images):
@@ -58,5 +58,5 @@ for k in range(number_of_images):
 import pickle
 
 
-with open('images_dataset.pickle', 'wb') as outfile:
+with open('images_dataset.pickle', 'rb') as outfile:
     pickle.dump(images_dataset, outfile)
